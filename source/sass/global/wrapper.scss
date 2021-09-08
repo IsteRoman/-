@@ -2,11 +2,11 @@
   max-width: 100%;
   min-width: $desktop-width;
   margin: 0 auto;
-  padding: 0 280px;
+  padding: 0 157px;
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
     min-width: $tablet-width;
-    padding: 0 121px;
+    padding: 0 21px;
   }
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
