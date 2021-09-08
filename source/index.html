@@ -78,32 +78,43 @@
           <input type="tel" id="user_phone" name="user-phone" placeholder="Введите Ваш номер телефона" required>
           <button class="main__feedback-button" type="submit">Подобрать велосипед мечты</button>
         </form>
-
+      </div>
+    </section>
+    <section class="about">
+      <a class="visually-hidden" id="about"></a>
+      <div class="about__block wrapper">
+        <h2>Несколько фактов о нас</h2>
+        <ul class="about__facts">
+          <li class="about__fact">Самый широкий выбор велосипедов!</li>
+          <li class="about__fact">Доставка велосипедов по всей России!</li>
+          <li class="about__fact">Большой выбор крутых аксессуаров!</li>
+          <li class="about__fact">Профессиональные консультации!</li>
+        </ul>
       </div>
     </section>
   </main>
   <footer class="footer">
     <a class="visually-hidden" id="contacts"></a>
-      <div class="footer__text-block wrapper">
-        <h2>Как нас найти?</h2>
-        <p>Мы находимся по адресу: Санкт-Петербург, ул. Большая Конюшенная, д. 19</p>
-      </div>
-      <div class="footer__map">
-        <img src="img/map.png" srcset="img/map@2x.png 2x" width="957" height="530" alt="Карта с адресом ул. Большая Конюшенная, д. 19 Санкт-Петербург">
-        <div class="footer__interactive-map" id="map"></div>
-      </div>
-      <div class="footer__contacts wrapper">
-        <a class="footer__contacts-link" href="mailto:puteshestviemechta@gmail.ru">
-          <svg class="footer__email" width="26" height="20">
-            <use href="#icon-mail"></use>
-          </svg>
-        puteshestviemechta@gmail.ru</a>
-        <a class="footer__contacts-link" href="tel:849978468446">
-          <svg class="footer__phone" width="21" height="22">
-            <use href="#icon-phone"></use>
-          </svg>
-          +7 (499) -784-684-46</a>
-      </div>
+    <div class="footer__text-block wrapper">
+      <h2>Как нас найти?</h2>
+      <p>Мы находимся по адресу: Санкт-Петербург, ул. Большая Конюшенная, д. 19</p>
+    </div>
+    <div class="footer__map">
+      <img src="img/map.png" srcset="img/map@2x.png 2x" width="957" height="530" alt="Карта с адресом ул. Большая Конюшенная, д. 19 Санкт-Петербург">
+      <div class="footer__interactive-map" id="map"></div>
+    </div>
+    <div class="footer__contacts wrapper">
+      <a class="footer__contacts-link" href="mailto:puteshestviemechta@gmail.ru">
+        <svg class="footer__email" width="26" height="20">
+          <use href="#icon-mail"></use>
+        </svg>
+      puteshestviemechta@gmail.ru</a>
+      <a class="footer__contacts-link" href="tel:849978468446">
+        <svg class="footer__phone" width="21" height="22">
+          <use href="#icon-phone"></use>
+        </svg>
+        +7 (499) -784-684-46</a>
+    </div>
   </footer>
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=2863a1bb-af93-4ad4-ad27-0d86db0b55bc"></script>
   <script src="js/main.js" type="module"></script>

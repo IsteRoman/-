@@ -1,0 +1,100 @@
+.about__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 150px 137px 121px 137px;
+
+  @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
+    padding: 0 106px 0 106px;
+  }
+
+  @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
+    padding: 0 28px 70px 29px;
+  }
+}
+
+.about__block h2 {
+  margin: 0;
+  margin-bottom: 102px;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: $dark-gray;
+
+  @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
+    margin-bottom: 86px;
+    font-size: 24px;
+    line-height: 1.7;
+  }
+
+  @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
+    width: calc(100% + 27px);
+    margin-bottom: 5px;
+    font-size: 24px;
+    line-height: 1.7;
+    text-align: center;
+  }
+}
+
+.about__facts {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: item;
+
+  @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.about__fact {
+  position: relative;
+  width: 263px;
+  min-height: 91px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  line-height: 1.54;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: $black;
+  text-align: center;
+
+  @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
+    margin-bottom: 93px;
+  }
+
+  @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
+    margin-top: 80px;
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 1.88;
+  }
+}
+
+.about__fact::before {
+  position: absolute;
+  top: -40px;
+  left: 115px;
+  z-index: -1;
+  font-size: 28px;
+  line-height: 1.35;
+  letter-spacing: -1.27px;
+  font-weight: 700;
+  color: $cyan;
+}
+
+.about__fact:nth-child(-n+9)::before {
+  content: '0' counter(item);
+  counter-increment: item;
+}
+
+.about__fact:nth-child(n+10)::before {
+  content: counter(item);
+  counter-increment: item;
+}
