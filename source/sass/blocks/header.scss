@@ -46,7 +46,13 @@
 }
 
 .no-js .header {
-  background-color: $white;
+  @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
+    background-color: $white;
+  }
+
+  @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
+    background-color: $white;
+  }
 }
 
 .no-js .header::before {
@@ -171,9 +177,9 @@
   display: block;
 }
 
-.header__menu-button:focus .header__open
+.header__menu-button:focus .header__open,
 .header__menu-button:hover .header__open,
-.header__menu-button:active .header__open  {
+.header__menu-button:active .header__open {
   stroke: $close-gray;
   opacity: 1;
 }

@@ -90,7 +90,7 @@
 }
 
 .about__fact:nth-child(-n+9)::before {
-  content: '0' counter(item);
+  content: "0" counter(item);
   counter-increment: item;
 }
 
