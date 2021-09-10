@@ -3,9 +3,9 @@ const MIN_NAME_LENGTH = 2;
 const PHONE_LENGTH = 11;
 const phoneRegEx = /[0-9]/;
 const form = document.querySelector('.main__feedback');
-const nameField = form.querySelector('#user_name');
-const phoneField = form.querySelector('#user_phone');
-const buttonSubmit = form.querySelector('.main__feedback-button');
+const nameField = document.querySelector('#user_name');
+const phoneField = document.querySelector('#user_phone');
+const buttonSubmit = document.querySelector('.main__feedback-button');
 
 const setErrorStyle = (object) => {
   object.style.border = '1px solid rgb(255, 0, 0)';
@@ -73,10 +73,8 @@ const sentForm = () => {
 };
 
 const workForm = () => {
-  if(form) {
-    stopSubmit();
-    sentForm();
-  }
+  stopSubmit();
+  sentForm();
 };
 
 export {workForm};

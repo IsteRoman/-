@@ -2,39 +2,9 @@
 /******/ 	"use strict";
 var __webpack_exports__ = {};
 
-;// CONCATENATED MODULE: ./source/js/map.js
-const addInteractiveMap = () => {
-  if (document.querySelector('#map')) {
-    ymaps.ready(() => {
-      const myMap = new ymaps.Map('map', {
-          center: [59.938635, 30.323118],
-          zoom: 16,
-        }, {
-          searchControlProvider: 'yandex#search',
-        }),
-        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
-          iconLayout: 'default#image',
-          iconImageHref: '../img/map-pin.png',
-          iconImageSize: [57, 53],
-          iconImageOffset: [-25, -45],
-        });
-
-      myMap.controls.remove('geolocationControl');
-      myMap.controls.remove('searchControl');
-      myMap.controls.remove('trafficControl');
-      myMap.controls.remove('typeSelector');
-      myMap.controls.remove('fullscreenControl');
-      myMap.controls.remove('rulerControl');
-      myMap.behaviors.disable('scrollZoom');
-      myMap.geoObjects.add(myPlacemark);
-    });
-  }
-};
-
-
-
 ;// CONCATENATED MODULE: ./source/js/header.js
-const body = document.querySelector('.body');
+const ESC_CODE = 27;
+const body = document.querySelector('body');
 const menuButton = document.querySelector('.header__menu-button');
 const navigationlink = document.querySelectorAll('.header__nav-link');
 
@@ -53,26 +23,24 @@ const clickButton = () => {
 };
 
 const closeByLink = () => {
-  Array.prototype.forEach.call(navigationlink, (close) => {
+  navigationlink.forEach((close) => {
     close.addEventListener('click', closeMenu);
   });
 };
 
 const closeByEsc = () => {
   window.addEventListener('keydown', (evt) => {
-    if (evt.keyCode === 27) {
+    if (evt.keyCode === ESC_CODE) {
       closeMenu();
     }
   });
 };
 
 const workHeader = () => {
-  if (document.querySelector('.header')) {
-    checkJS();
-    clickButton();
-    closeByLink();
-    closeByEsc();
-  }
+  checkJS();
+  clickButton();
+  closeByLink();
+  closeByEsc();
 };
 
 
@@ -83,9 +51,9 @@ const MIN_NAME_LENGTH = 2;
 const PHONE_LENGTH = 11;
 const phoneRegEx = /[0-9]/;
 const validation_form = document.querySelector('.main__feedback');
-const nameField = validation_form.querySelector('#user_name');
-const phoneField = validation_form.querySelector('#user_phone');
-const buttonSubmit = validation_form.querySelector('.main__feedback-button');
+const nameField = document.querySelector('#user_name');
+const phoneField = document.querySelector('#user_phone');
+const buttonSubmit = document.querySelector('.main__feedback-button');
 
 const setErrorStyle = (object) => {
   object.style.border = '1px solid rgb(255, 0, 0)';
@@ -147,16 +115,14 @@ const sentForm = () => {
       localStorage.setItem('tel', phoneField.value);
       validation_form.reset();
       buttonSubmit.textContent = 'Форма Отправлена';
-      setTimeout(changeButtonText, 2000);
+      setTimeout(changeButtonText, 2500);
     }
   });
 };
 
 const workForm = () => {
-  if(validation_form) {
-    stopSubmit();
-    sentForm();
-  }
+  stopSubmit();
+  sentForm();
 };
 
 
@@ -166,11 +132,49 @@ const video = document.querySelector('.video__content');
 const videoButton = document.querySelector('.video__button');
 
 const workVideo = () => {
-  if (document.querySelector('.video')) {
-    videoButton.addEventListener('click', () => {
-      videoButton.classList.add('visually-hidden');
-      video.setAttribute('controls', 'controls');
-      video.play();
+  videoButton.addEventListener('click', () => {
+    videoButton.classList.add('visually-hidden');
+    video.setAttribute('controls', 'controls');
+    video.play();
+  });
+};
+
+
+
+;// CONCATENATED MODULE: ./source/js/map.js
+const MAP_CENTER_X = 59.938635;
+const MAP_CENTER_Y = 30.323118;
+const MAP_ZOOM = 16;
+const ICON_IMAGE_SIZE_X = 57;
+const ICON_IMAGE_SIZE_Y = 53;
+const ICON_IMAGE_OFFSET_X = -25;
+const ICON_IMAGE_OFFSET_Y = -45;
+const ymaps = window.ymaps;
+
+const addInteractiveMap = () => {
+  if (document.querySelector('#map')) {
+    ymaps.ready(() => {
+      const myMap = new ymaps.Map('map', {
+          center: [MAP_CENTER_X, MAP_CENTER_Y],
+          zoom: MAP_ZOOM,
+        }, {
+          searchControlProvider: 'yandex#search',
+        }),
+        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
+          iconLayout: 'default#image',
+          iconImageHref: '../img/map-pin.png',
+          iconImageSize: [ICON_IMAGE_SIZE_X, ICON_IMAGE_SIZE_Y],
+          iconImageOffset: [ICON_IMAGE_OFFSET_X, ICON_IMAGE_OFFSET_Y],
+        });
+
+      myMap.controls.remove('geolocationControl');
+      myMap.controls.remove('searchControl');
+      myMap.controls.remove('trafficControl');
+      myMap.controls.remove('typeSelector');
+      myMap.controls.remove('fullscreenControl');
+      myMap.controls.remove('rulerControl');
+      myMap.behaviors.disable('scrollZoom');
+      myMap.geoObjects.add(myPlacemark);
     });
   }
 };
@@ -183,10 +187,32 @@ const workVideo = () => {
 
 
 
-addInteractiveMap();
-workHeader();
-workForm();
-workVideo();
+const err = 1;
+
+if(document.querySelector('.header')) {
+  workHeader();
+} else {
+  err + 1;
+}
+
+if(document.querySelector('.main__feedback')) {
+  workForm();
+} else {
+  err + 1;
+}
+
+if(document.querySelector('.video')) {
+  workVideo();
+} else {
+  err + 1;
+}
+
+if(document.querySelector('#map')) {
+  addInteractiveMap();
+} else {
+  err + 1;
+}
+
 
 /******/ })()
 ;

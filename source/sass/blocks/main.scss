@@ -16,18 +16,26 @@
 .main__block {
   display: flex;
   justify-content: space-between;
-  flex-wrap: nowrap;
-  padding: 0 280px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 875px;
+  padding: 0 75px;
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
     flex-direction: column;
     align-items: center;
+    flex-wrap: nowrap;
+    width: unset;
+    max-width: unset;
     padding: 0;
   }
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
     flex-direction: column;
     align-items: center;
+    flex-wrap: nowrap;
+    width: unset;
+    max-width: unset;
     padding: 0 16px;
   }
 }
@@ -61,7 +69,6 @@
   line-height: 1.39;
   letter-spacing: 1.7px;
   font-weight: 700;
-  word-break: break-all;
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
     max-width: unset;
