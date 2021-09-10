@@ -28,4 +28,3 @@ if(document.querySelector('#map')) {
 } else {
   err + 1;
 }
-
