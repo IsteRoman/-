@@ -8,16 +8,16 @@ const phoneField = form.querySelector('#user_phone');
 const buttonSubmit = form.querySelector('.main__feedback-button');
 
 const setErrorStyle = (object) => {
-  object.style.border = '5px solid rgb(255, 0, 0)';
+  object.style.border = '1px solid rgb(255, 0, 0)';
 };
 
 const removeError = (object) => {
   object.removeAttribute('style');
-}
+};
 
 const changeButtonText = () => {
   buttonSubmit.textContent = 'Подобрать велосипед мечты';
-}
+};
 
 const checkName = () => {
   nameField.addEventListener('blur', () => {
@@ -31,7 +31,7 @@ const checkName = () => {
       removeError(nameField);
     }
   });
-}
+};
 
 const checkPhone = () => {
   phoneField.addEventListener('blur', () => {
@@ -45,34 +45,38 @@ const checkPhone = () => {
       removeError(phoneField);
     }
   });
-}
+};
 
 const stopSubmit = () => {
   form.addEventListener('change', () => {
     checkName();
     checkPhone();
-  })
+  });
   buttonSubmit.addEventListener('click', (evt) => {
     if (nameField.hasAttribute('style') || phoneField.hasAttribute('style')) {
-      evt.preventDefault()
+      evt.preventDefault();
     }
   });
-}
+};
 
 const sentForm = () => {
   form.addEventListener('submit', (evt) => {
     if (!nameField.hasAttribute('style') && !phoneField.hasAttribute('style')) {
       evt.preventDefault();
+      localStorage.setItem('name', nameField.value);
+      localStorage.setItem('tel', phoneField.value);
       form.reset();
       buttonSubmit.textContent = 'Форма Отправлена';
-      setTimeout(changeButtonText, 2000);
+      setTimeout(changeButtonText, 2500);
     }
-  })
-}
+  });
+};
 
 const workForm = () => {
-  stopSubmit();
-  sentForm();
-}
+  if(form) {
+    stopSubmit();
+    sentForm();
+  }
+};
 
 export {workForm};

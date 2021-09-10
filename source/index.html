@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Подбор велосипедов">
     <title>Велосипеды</title>
     <link rel="icon" href="favicon.ico">
     <link rel="icon" href="img/favicon/icon.svg" type="image/svg+xml">
@@ -20,7 +21,7 @@
   </div>
   <header class="header">
     <div class="header__block wrapper">
-      <a class="header__logo">
+      <a class="header__logo" href="#">
         <img src="img/logo.svg" width="67" height="20" alt="Велосипеды">
       </a>
       <button class="header__menu-button" type="button" aria-label="Открыть меню">
@@ -34,28 +35,28 @@
       <ul class="header__nav">
         <li class="header__nav-item">
           <a class="header__nav-link" href="#about">О нас
-            <svg class="header__nav-ico" width="12" height="7">
+            <svg class="header__nav-ico" width="8" height="12">
               <use href="#icon-arrow"></use>
             </svg>
           </a>
         </li>
         <li class="header__nav-item">
           <a class="header__nav-link" href="#types">Виды велосипедов
-            <svg class="header__nav-ico" width="12" height="7">
+            <svg class="header__nav-ico" width="8" height="12">
               <use href="#icon-arrow"></use>
             </svg>
           </a>
         </li>
         <li class="header__nav-item">
           <a class="header__nav-link" href="#video">Видео про велосипеды
-            <svg class="header__nav-ico" width="12" height="7">
+            <svg class="header__nav-ico" width="8" height="12">
               <use href="#icon-arrow"></use>
             </svg>
           </a>
         </li>
         <li class="header__nav-item">
           <a class="header__nav-link" href="#contacts">Контакты
-            <svg class="header__nav-ico" width="12" height="7">
+            <svg class="header__nav-ico" width="8" height="12">
               <use href="#icon-arrow"></use>
             </svg>
           </a>
@@ -71,7 +72,7 @@
           <p>Наш магазин отбирает только самые лучшие велосипеды для продажи</p>
         </div>
         <form class="main__feedback" method="GET" action="https://echo.htmlacademy.ru/">
-          <legend>Заполните поля ниже и мы подберем велосипед Вашей мечты</legend>
+          <h2>Заполните поля ниже и мы подберем велосипед Вашей мечты</h2>
           <label class="visually-hidden" for="user_name">Ваше имя</label>
           <input type="text" id="user_name" name="user-name" placeholder="Введите Ваше Имя" required>
           <label class="visually-hidden" for="user_phone">Ваш номер телефона</label>
@@ -99,19 +100,28 @@
         <ul class="types__list">
           <li class="types__item types__item--big-ring">
             <a class="types__link" href="#">
-              <img src="img/street-bike.png" srcset="img/street-bike@2x.png" width="342" height="503" alt="Фотография велосипеда для дорог">
+              <picture>
+                <source srcset="img/street-bike.webp 1x, img/street-bike@2x.webp 2x" type="image/webp">
+                <img src="img/street-bike.png" srcset="img/street-bike@2x.png" width="342" height="503" alt="Фотография велосипеда для дорог" loading="lazy">
+              </picture>
               <h3>Дорожный велосипед</h3>
             </a>
           </li>
           <li class="types__item types__item--square">
             <a class="types__link" href="#">
-              <img src="img/mountain-bike.png" srcset="img/mountain-bike@2x.png" width="342" height="566" alt="Фотография велосипеда для гор">
+              <picture>
+                <source srcset="img/mountain-bike.webp 1x, img/mountain-bike@2x.webp 2x" type="image/webp">
+                <img src="img/mountain-bike.png" srcset="img/mountain-bike@2x.png" width="342" height="566" alt="Фотография велосипеда для гор" loading="lazy">
+              </picture>
               <h3>Горный велосипед</h3>
             </a>
           </li>
           <li class="types__item types__item--small-ring">
             <a class="types__link" href="#">
-              <img src="img/children-bicycle.png" srcset="img/children-bicycle@2x.png" width="342" height="512" alt="Фотография велосипеда для детей">
+              <picture>
+                <source srcset="img/children-bicycle.webp 1x, img/children-bicycle@2x.webp 2x" type="image/webp">
+                <img src="img/children-bicycle.png" srcset="img/children-bicycle@2x.png" width="342" height="512" alt="Фотография велосипеда для детей" loading="lazy">
+              </picture>
               <h3>Детский велосипед</h3>
             </a>
           </li>
@@ -120,7 +130,19 @@
     </section>
     <section class="video">
       <a class="visually-hidden" id="video"></a>
-      <div class="video__block"></div>
+      <div class="video__block">
+        <div class="video__info">
+          <h2>Видео про велосипеды</h2>
+          <p>В этом видео мы подробно расскажем про особенности выбора велосипеда для себя.</p>
+        </div>
+        <div class="video__content-block">
+          <button class="video__button" type="button" aria-label="Воспроезвести видео"></button>
+          <video class="video__content" preload="none" width="929" height="522" poster="img/video-poster.png" aria-label="Видео о велосипедах">
+            <source src="video/video.webm" type="video/webm">
+            <source src="video/video.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="footer">
@@ -130,7 +152,10 @@
       <p>Мы находимся по адресу: Санкт-Петербург, ул. Большая Конюшенная, д. 19</p>
     </div>
     <div class="footer__map">
-      <img src="img/map.png" srcset="img/map@2x.png 2x" width="957" height="530" alt="Карта с адресом ул. Большая Конюшенная, д. 19 Санкт-Петербург">
+      <picture>
+        <source srcset="img/map.webp 1x, img/map@2x.webp 2x" type="image/webp">
+        <img src="img/map.png" srcset="img/map@2x.png 2x" width="957" height="530" alt="Карта с адресом ул. Большая Конюшенная, д. 19 Санкт-Петербург" loading="lazy">
+      </picture>
       <div class="footer__interactive-map" id="map"></div>
     </div>
     <div class="footer__contacts wrapper">

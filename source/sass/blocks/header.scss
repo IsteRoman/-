@@ -95,7 +95,7 @@
 .header__logo {
   position: absolute;
   z-index: 1;
-  top: 320px;
+  top: 316px;
   flex-shrink: 0;
   width: 67px;
   height: 20px;
@@ -195,7 +195,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 0;
-  padding: 0 20px 9px 20px;
+  padding: 0 28px 9px 20px;
   border-bottom: 1px solid $white-0-2;
   list-style: none;
 
@@ -214,7 +214,7 @@
     display: none;
     width: 100%;
     height: 100%;
-    padding: 100px 0 138px 0;
+    padding: 70px 0 138px 0;
     background-color: $white;
     border-bottom: none;
   }
@@ -248,6 +248,7 @@
   left: 0;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   flex-wrap: nowrap;
   overflow-y: auto;
 }
@@ -274,14 +275,15 @@
   }
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
-    margin-top: 30px;
-    padding: 17px 16px;
+    margin-top: 29px;
+    padding: 17px 16px 12px 16px;
     background-color: $special-gray;
   }
 }
 
 .header__nav-link {
   font-weight: 300;
+  letter-spacing: 0;
   color: $white;
   opacity: 0.7;
   transition: $default-transition;
@@ -306,7 +308,7 @@
     width: 100%;
     font-size: 20px;
     line-height: 140%;
-    letter-spacing: 0;
+    letter-spacing: 0.7px;
     font-weight: 400;
     color: $extra-gray;
     opacity: 1;
@@ -318,10 +320,13 @@
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
     display: block;
+    margin-top: -5px;
   }
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
     display: block;
+    margin-top: -5px;
+    margin-right: 6px;
   }
 }
 

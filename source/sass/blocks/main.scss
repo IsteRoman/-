@@ -9,7 +9,7 @@
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
     padding-top: 74px;
-    padding-bottom: 70px;
+    padding-bottom: 74px;
   }
 }
 
@@ -41,7 +41,7 @@
     max-width: unset;
     min-height: 122px;
     margin-bottom: 150px;
-    padding: 0;
+    padding: 1px 0 0 0;
   }
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
@@ -55,28 +55,30 @@
 .main-info h1 {
   max-width: 320px;
   margin: 0;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
   padding: 0;
   font-size: 46px;
   line-height: 1.39;
-  letter-spacing: -0.5px;
+  letter-spacing: 1.7px;
   font-weight: 700;
   word-break: break-all;
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
     max-width: unset;
-    margin-bottom: 20px;
+    margin-bottom: 21px;
     font-size: 30px;
     line-height: 1.4;
+    letter-spacing: 1px;
     text-align: center;
     word-break: normal;
   }
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
     max-width: unset;
-    margin-bottom: 20px;
+    margin-bottom: 23px;
     font-size: 30px;
     line-height: 1.4;
+    letter-spacing: 1px;
     text-align: center;
     word-break: normal;
   }
@@ -86,7 +88,7 @@
   margin: 0;
   font-size: 20px;
   line-height: 1.6;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.05px;
   font-weight: 300;
   opacity: 0.8;
 
@@ -112,8 +114,8 @@
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
     max-width: unset;
-    padding-left: 203px;
-    padding-right: 202px;
+    padding-left: 223px;
+    padding-right: 221px;
   }
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
@@ -121,23 +123,29 @@
   }
 }
 
-.main__feedback legend {
+.main__feedback h2 {
+  margin: 0;
+  margin-top: 3px;
   font-size: 17px;
   line-height: 1.64;
   font-weight: 600;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.15px;
   text-align: center;
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
+    margin-bottom: 30px;
     padding-right: 5px;
     font-size: 18px;
     line-height: 1.5;
+    letter-spacing: 0.13px;
     color: $black;
   }
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
+    margin-top: 5px;
     font-size: 18px;
     line-height: 1.5;
+    letter-spacing: 0.3px;
     color: $black;
   }
 }
@@ -156,13 +164,16 @@
   transition: $default-transition;
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
-    padding: 12px 21px 12px 21px;
+    margin-top: 0;
+    margin-bottom: 18px;
+    padding: 12px 21px 11px 21px;
     font-size: 18px;
     line-height: 1.5;
     color: $black;
   }
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
+    margin-top: 21px;
     padding: 13px 26px 11px 26px;
     font-size: 15px;
     line-height: 1.6;
@@ -176,6 +187,8 @@
 }
 
 .main__feedback input::placeholder {
+  font-size: 15px;
+  line-height: 1.6;
   opacity: 0.5;
 }
 
@@ -200,6 +213,14 @@
   outline: 0;
   transition: $default-transition;
   cursor: pointer;
+
+  @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
+    margin-top: -3px;
+  }
+
+  @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
+    margin-top: 14px;
+  }
 }
 
 .main__feedback-button:hover,
