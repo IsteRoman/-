@@ -1,17 +1,14 @@
-const MAP_CENTER_X = 59.938635;
-const MAP_CENTER_Y = 30.323118;
+const MAP_CENTER = [59.938635, 30.323118];
 const MAP_ZOOM = 16;
-const ICON_IMAGE_SIZE_X = 57;
-const ICON_IMAGE_SIZE_Y = 53;
-const ICON_IMAGE_OFFSET_X = -25;
-const ICON_IMAGE_OFFSET_Y = -45;
+const ICON_IMAGE_SIZE = [57, 53];
+const ICON_IMAGE_OFFSET = [-25, -45];
 const ymaps = window.ymaps;
 
 const addInteractiveMap = () => {
   if (document.querySelector('#map')) {
     ymaps.ready(() => {
       const myMap = new ymaps.Map('map', {
-          center: [MAP_CENTER_X, MAP_CENTER_Y],
+          center: MAP_CENTER,
           zoom: MAP_ZOOM,
         }, {
           searchControlProvider: 'yandex#search',
@@ -19,8 +16,8 @@ const addInteractiveMap = () => {
         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
           iconLayout: 'default#image',
           iconImageHref: '../img/map-pin.png',
-          iconImageSize: [ICON_IMAGE_SIZE_X, ICON_IMAGE_SIZE_Y],
-          iconImageOffset: [ICON_IMAGE_OFFSET_X, ICON_IMAGE_OFFSET_Y],
+          iconImageSize: ICON_IMAGE_SIZE,
+          iconImageOffset: ICON_IMAGE_OFFSET,
         });
 
       myMap.controls.remove('geolocationControl');
