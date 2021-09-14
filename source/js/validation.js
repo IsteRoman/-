@@ -1,7 +1,6 @@
 const ZERO_VALUE = 0;
 const MIN_NAME_LENGTH = 2;
-const PHONE_LENGTH = 11;
-const phoneRegEx = /[0-9]/;
+const phoneRegEx = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
 const form = document.querySelector('.main__feedback');
 const nameField = document.querySelector('#user_name');
 const phoneField = document.querySelector('#user_phone');
@@ -35,9 +34,9 @@ const checkName = () => {
 
 const checkPhone = () => {
   phoneField.addEventListener('blur', () => {
-    if (!(phoneField.value.length === PHONE_LENGTH) || !phoneRegEx.test(phoneField.value)) {
+    if (!phoneRegEx.test(phoneField.value)) {
       setErrorStyle(phoneField);
-    } else if ((phoneField.value.length === PHONE_LENGTH) && phoneRegEx.test(phoneField.value)) {
+    } else if (phoneRegEx.test(phoneField.value)) {
       removeError(phoneField);
     }
 

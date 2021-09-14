@@ -68,8 +68,10 @@
 }
 
 .header__block {
+  position: relative;
   display: flex;
-  padding: 21px 283px 0 283px;
+  justify-content: center;
+  padding: 21px 0 0 0;
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
     justify-content: flex-start;
@@ -98,6 +100,7 @@
   top: 316px;
   flex-shrink: 0;
   width: 67px;
+  margin-left: -812px;
   height: 20px;
   cursor: pointer;
   transition: $default-transition;
@@ -105,11 +108,13 @@
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
     position: unset;
     z-index: 0;
+    margin-left: unset;
   }
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
     position: unset;
     z-index: 0;
+    margin-left: unset;
   }
 }
 
@@ -191,9 +196,10 @@
 .header__nav {
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-self: center;
   flex-wrap: wrap;
+  max-width: 883px;
   margin: 0;
   padding: 0 28px 9px 20px;
   border-bottom: 1px solid $white-0-2;
@@ -203,6 +209,7 @@
     display: none;
     z-index: 4;
     width: 100%;
+    max-width: unset;
     height: 100%;
     padding: 100px 0 138px 0;
     background-color: $white;
@@ -213,6 +220,7 @@
     z-index: 4;
     display: none;
     width: 100%;
+    max-width: unset;
     height: 100%;
     padding: 70px 0 138px 0;
     background-color: $white;
@@ -254,7 +262,7 @@
 }
 
 .header__nav-item:not(:last-of-type) {
-  margin-right: 5px;
+  margin-right: 135px;
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
     margin-right: 0;

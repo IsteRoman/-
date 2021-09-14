@@ -1,16 +1,19 @@
 .wrapper {
-  max-width: 100%;
   min-width: $desktop-width;
+  width: 100%;
+  max-width: 1166px;
   margin: 0 auto;
-  padding: 0 157px;
+  padding: 0 137px;
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
     min-width: $tablet-width;
+    max-width: unset;
     padding: 0 21px;
   }
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
     min-width: $mobile-width;
+    max-width: unset;
     padding: 0 16px;
   }
 }

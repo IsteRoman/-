@@ -25,6 +25,10 @@ body {
   letter-spacing: -0.5px;
   color: $white;
 
+  @media (min-width: $desktop-width) {
+    overflow-y: overlay;
+  }
+
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
     overflow-x: hidden;
   }

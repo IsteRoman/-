@@ -4,15 +4,23 @@
 
 .types__block {
   display: flex;
+  width: 100%;
+  max-width: 1166px;
   flex-direction: column;
-  padding-bottom: 147px;
+  padding: 0 0 147px 20px;
+
+  @media (min-width: $desktop-width) and (max-width: $mid-desktop-width) {
+    padding: 0 0 117px 20px;
+  }
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
+    max-width: unset;
     margin-top: -25px;
     padding: 0 35px 20px 35px;
   }
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
+    max-width: unset;
     padding-bottom: 12px;
   }
 }
@@ -45,12 +53,17 @@
 .types__list {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media (min-width: $desktop-width) and (max-width: $mid-desktop-width) {
+    justify-content: center;
+    width: 1004px;
+  }
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
     justify-content: space-evenly;
@@ -85,6 +98,18 @@
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
     margin-top: 0;
+  }
+}
+
+.types__item:not(:last-of-type) {
+  margin-right: 50px;
+
+  @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
+    margin-right: 10px;
+  }
+
+  @media (min-width: $desktop-width) and (max-width: $mid-desktop-width) {
+    margin-bottom: 30px;
   }
 }
 

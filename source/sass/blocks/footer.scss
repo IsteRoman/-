@@ -19,13 +19,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 957px;
   margin-bottom: 42px;
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
+    max-width: unset;
     margin-bottom: 20px;
   }
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
+    max-width: unset;
     margin-bottom: 20px;
   }
 }
@@ -78,6 +81,7 @@
   position: relative;
   display: inline-block;
   vertical-align: top;
+  text-align: center;
   width: 100%;
   height: 530px;
   padding: 0 241px 0 242px;
@@ -94,26 +98,36 @@
 }
 
 .footer__map img {
-  width: 100%;
+  width: 957px;
   height: 100%;
   object-fit: cover;
+
+  @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
+    width: 100%;
+  }
+
+  @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
+    width: 100%;
+  }
 }
 
 .footer__interactive-map {
   position: absolute;
   top: 0;
-  left: 0;
-  width: calc(100% - 483px);
+  left: calc(50% - 720px);
+  width: 957px;
   height: 530px;
   margin: 0 241px 0 242px;
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
+    left: 0;
     width: calc(100% - 70px);
     height: 545px;
     margin: 0 35px 0 35px;
   }
 
   @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
+    left: 0;
     width: 100%;
     height: 250px;
     margin: 0;
