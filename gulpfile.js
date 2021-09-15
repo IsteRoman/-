@@ -19,6 +19,13 @@ var webpackStream = require("webpack-stream");
 var webpackConfig = require("./webpack.config.js");
 var del = require("del");
 
+gulp.task("library", function() {
+  return gulp.src("./source/js/vendor.js")
+  .pipe(webpackStream(webpackConfig), webpack)
+  .pipe(rename("vendor.js"))
+  .pipe(gulp.dest("build/js"));
+});
+
 gulp.task("js", function() {
   return gulp.src("./source/js/main.js")
   .pipe(webpackStream(webpackConfig), webpack)
@@ -95,6 +102,8 @@ gulp.task("copy", function () {
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
     'source/video/*',
+    'source/leaflet/*',
+    'source/js/*.map',
     'source/*.webmanifest',
     "source//*.ico"
     ], {
@@ -107,5 +116,5 @@ gulp.task("clean", function () {
   return del("build");
 });
 
-gulp.task("build", gulp.series("clean", "images", "copy", "webp", "css", "sprite", "html", "js"));
+gulp.task("build", gulp.series("clean", "images", "copy", "webp", "css", "sprite", "html", "library", "js"));
 gulp.task("start", gulp.series("build", "server"));
