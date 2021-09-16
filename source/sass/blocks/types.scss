@@ -61,8 +61,7 @@
   list-style: none;
 
   @media (min-width: $desktop-width) and (max-width: $mid-desktop-width) {
-    justify-content: flex-start;
-    padding-left: 50px;
+    justify-content: center;
   }
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
@@ -79,6 +78,10 @@
 .types__item {
   position: relative;
   z-index: 1;
+
+  @media (min-width: $desktop-width) and (max-width: $mid-desktop-width) {
+    width: 250px;
+  }
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
     margin-bottom: 50px;

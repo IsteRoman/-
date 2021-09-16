@@ -164,7 +164,7 @@ const addInteractiveMap = () => {
     ).addTo(map);
 
     const mainPinIcon = L.icon({
-      iconUrl: '../img/map-pin.png',
+      iconUrl: 'map-pin.png',
       iconSize: ICON_IMAGE_SIZE,
       iconAnchor: ICON_IMAGE_OFFSET,
     });
