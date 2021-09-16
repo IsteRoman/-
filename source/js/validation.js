@@ -1,6 +1,6 @@
 const ZERO_VALUE = 0;
 const MIN_NAME_LENGTH = 2;
-const phoneRegEx = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+const phoneRegEx =  /^(\+7|8)?(\(\d{3}\)|\d{3})\d{7}$/;
 const form = document.querySelector('.main__feedback');
 const nameField = document.querySelector('#user_name');
 const phoneField = document.querySelector('#user_phone');

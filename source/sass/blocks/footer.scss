@@ -97,6 +97,25 @@
   }
 }
 
+.footer__map::before {
+  content: "";
+  position: absolute;
+  bottom: calc(22% - 57px);
+  left: calc(48% - 57px);
+  width: 57px;
+  height: 53px;
+  background: url("../img/map-pin.png") no-repeat;
+  background-size: contain;
+
+  @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
+    content: none;
+  }
+
+  @media (min-width: $mobile-width) and (max-width: $max-mobile-width) {
+    content: none;
+  }
+}
+
 .footer__map img {
   width: 957px;
   height: 100%;

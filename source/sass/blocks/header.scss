@@ -127,6 +127,16 @@
   opacity: 0.5;
 }
 
+.header__logo--on-main-page {
+  cursor: default;
+}
+
+.header__logo--on-main-page:hover,
+.header__logo--on-main-page:focus,
+.header__logo--on-main-page:active {
+  opacity: 1;
+}
+
 .header__menu-button {
   position: absolute;
   z-index: 5;
@@ -261,7 +271,7 @@
   overflow-y: auto;
 }
 
-.header__nav-item:not(:last-of-type) {
+.header__nav-item:not(:nth-of-type(4n)) {
   margin-right: 135px;
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {

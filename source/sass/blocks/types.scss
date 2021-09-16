@@ -61,8 +61,8 @@
   list-style: none;
 
   @media (min-width: $desktop-width) and (max-width: $mid-desktop-width) {
-    justify-content: center;
-    width: 1004px;
+    justify-content: flex-start;
+    padding-left: 50px;
   }
 
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
