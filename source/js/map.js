@@ -21,7 +21,8 @@ const addInteractiveMap = () => {
     ).addTo(map);
 
     const mainPinIcon = L.icon({
-      iconUrl: '../img/map-pin.png',
+      iconUrl: 'img/map-pin.png',
+      iconRetinaUrl: 'img/map-pin@2x.png',
       iconSize: ICON_IMAGE_SIZE,
       iconAnchor: ICON_IMAGE_OFFSET,
     });
