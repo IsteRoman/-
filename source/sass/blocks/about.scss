@@ -79,6 +79,10 @@
   color: $black;
   text-align: center;
 
+  @media (min-width: $desktop-width) and (max-width: $mid-desktop-width) {
+    width: 243px;
+  }
+
   @media (min-width: $tablet-width) and (max-width: $max-tablet-width) {
     margin-bottom: 72px;
   }
@@ -91,9 +95,13 @@
   }
 }
 
-.about__fact:not(:last-of-type) {
+.about__fact:not(:nth-of-type(4n)) {
   @media (min-width: $desktop-width) {
     margin-right: 38px;
+  }
+
+  @media (min-width: $desktop-width) and (max-width: $mid-desktop-width) {
+    margin-right: 0px;
   }
 }
 
